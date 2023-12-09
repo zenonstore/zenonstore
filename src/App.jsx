@@ -6,16 +6,22 @@ import Footer from "./components/footer/Footer";
 import Guarantees from "./components/guarantees/Guarantees";
 import Testmonials from "./components/testmonials/Testmonials";
 import { useEffect, useState } from "react";
-import tiktokPixel from "tiktok-pixel";
+import TikTokPixel from "tiktok-pixel";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   useEffect(() => {
-    // Initialize TikTok Pixel with your Pixel ID
-    tiktokPixel.init("CLPPFB3C77U6SG2AL7M0");
-
-    // Track a standard event (Replace 'ViewContent' with the actual event name)
-    tiktokPixel.track("ViewContent", "ClickButton", "SubmitForm");
+    const productId = generateUniqueId();
+    TikTokPixel.init("CLPPFB3C77U6SG2AL7M0");
+    TikTokPixel.track("ViewContent", {
+      content_id: productId,
+    });
   }, []);
+
+  const generateUniqueId = () => {
+    return uuidv4();
+  };
+
   const [activeLink, setActiveLink] = useState("HeaderId");
 
   const handleScroll = () => {

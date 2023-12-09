@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./form.css";
 import offer from "../../assets/offer.png";
+import TikTokPixel from "tiktok-pixel";
 
 const Form = () => {
   const [price, setPrice] = useState(219);
@@ -19,6 +20,7 @@ const Form = () => {
       (result) => {
         console.log(result.text);
         setOrdered(true);
+        TikTokPixel.track("FormSubmitted");
       },
       (error) => {
         console.log(error.text);
