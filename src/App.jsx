@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from "uuid";
 function App() {
   useEffect(() => {
     const productId = generateUniqueId();
-    TikTokPixel.init("CLPPFB3C77U6SG2AL7M0");
+    TikTokPixel.init("CLRK4DJC77U2H4CKJHCG");
     TikTokPixel.track("ViewContent", {
       content_id: productId,
     });
