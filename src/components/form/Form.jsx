@@ -107,6 +107,7 @@ const Form = () => {
         </div>
         {!ordered && (
           <input
+            disabled={isLoading}
             type="submit"
             value={isLoading ? "الطلب قيد الإرسال..." : "إتمام الطلب"}
             className={ordered ? "sucess-btn" : "order-btn"}
