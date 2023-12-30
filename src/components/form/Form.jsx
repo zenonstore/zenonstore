@@ -20,7 +20,7 @@ const Form = () => {
       (result) => {
         console.log(result.text);
         setOrdered(true);
-         TikTokPixel.track("SubmitForm");
+        //  TikTokPixel.track("SubmitForm"); 
       },
       (error) => {
         console.log(error.text);
